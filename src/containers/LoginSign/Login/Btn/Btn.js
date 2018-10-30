@@ -1,13 +1,12 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 
-import Aux from '../../../../hoc/Aux';
 
 const btn = () => {
     return (
-        <Aux>
+        <Fragment>
             <button>SignIn</button>
             <button>LogIn</button>
-        </Aux>
+        </Fragment>
     )
 }
 

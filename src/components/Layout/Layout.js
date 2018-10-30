@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
-import Aux from '../../hoc/Aux';
 import NavigationItems from '../Navigation/NavigationItems';
 import Functions from '../Functions/Functions';
 import LastDescription from '../LastDescription/LastDescription';
@@ -10,13 +9,13 @@ import classes from './Layout.css';
 class Layout extends Component {
     render () {
         return (
-            <Aux>
+            <Fragment>
                 <div className={classes.NavigationItems}>
                     <NavigationItems />
                 </div>
                 <Functions />
                 <LastDescription />
-            </Aux>
+            </Fragment>
         )
     }
 }

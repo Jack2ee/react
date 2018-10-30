@@ -10,6 +10,7 @@ const login = (props) => {
         <div>
             <NavigationItems/>
             <LoginList />
+            <Btn/>
         </div>
     )
 };

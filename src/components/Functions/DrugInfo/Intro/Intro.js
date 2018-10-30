@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
-import Aux from '../../../../hoc/Aux';
 import classes from './Intro.css';
 
 const intro = () => {
@@ -10,12 +9,12 @@ const intro = () => {
     const introConceptSource = "-한국의약품안전관리원"
 
     return (
-        <Aux>
+        <Fragment>
             <div><h2>{introTitle}</h2></div>
             <div>{introConcept}</div>
             <div className={classes.IntroConceptDescription}>{introConceptDescription}</div>
             <div className={classes.IntroConceptSource}>{introConceptSource}</div>
-        </Aux>
+        </Fragment>
     );
 };
 
