@@ -1,0 +1,16 @@
+.VisionSquare2 {
+    width: 45%;
+    height: 100%;
+    background-color: #dcc7aa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.VisionSquareLayout {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+}

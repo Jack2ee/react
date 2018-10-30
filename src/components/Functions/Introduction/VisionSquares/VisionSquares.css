@@ -1,0 +1,29 @@
+.VisionSquaresLayout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffe0;
+}
+
+.VisionSquares {
+    width: 85%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.VisionSquare1and2 {
+    display: flex;
+    height: 40%;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.VisionSquare3and4 {
+    display: flex;
+    height: 40%;
+    justify-content: center;
+    align-items: flex-start;
+}

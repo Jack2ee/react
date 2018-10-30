@@ -1,0 +1,31 @@
+.DefaultPageBtnDiv {
+    position: absolute;
+    top: 85%;
+    left: 0;
+
+    width: 75%;
+    height: auto;
+
+    z-index: 200;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.DefaultPageBtn {
+    width: 15rem;
+    height: 3.5rem;
+
+    background-color: #f7c331;
+    color: white;
+    border: transparent;
+
+    cursor: pointer;
+}
+
+.straightLineImg {
+    width: 11%;
+    height: 5%;
+    margin-right: 0.7rem;
+}

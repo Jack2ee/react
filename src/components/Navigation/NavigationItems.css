@@ -1,0 +1,105 @@
+.OverallNav {
+    position: fixed;
+    width: 100%;
+    height: 7rem;
+    z-index: 300;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.Link {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.NavBar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+.NavLeft {
+    width: 40%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #fffafa;
+}
+
+.LogoArea {
+    width: 20%;
+    height: 5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fffafa;
+}
+
+.NavRight {
+    width: 40%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #fffafa;
+}
+
+.Hover {
+    z-index: 400;
+    width: 100%;
+    height: 4rem;
+    background-color: #fffafa;
+    justify-content: flex-start;
+}
+
+.HoverContents {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+
+.HoverDrug {
+    text-align: center;
+    font-weight: bold;
+    width: 5rem;
+    border-right: solid 1px;
+    cursor: pointer;
+}
+
+.HoverHealth {
+    text-align: center;
+    width: 5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.NavigationDiv {
+    width: 6rem;
+    height: 5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+
+.NavigationDiv:hover,
+.HoverDrug:hover,
+.HoverHealth:hover,
+.Link:hover {
+    color: #6b7a8f;
+    cursor: pointer;
+}

@@ -1,0 +1,9 @@
+.Description {
+    width: 50%;
+    height: 85%;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+}

@@ -1,0 +1,21 @@
+.InputBox {
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 20%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.InputArea {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+    background-color: beige;
+}

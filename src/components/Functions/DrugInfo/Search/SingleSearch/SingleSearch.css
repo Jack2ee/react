@@ -1,0 +1,30 @@
+.SingleSearchBox {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.SingleSearchs {
+    width: 90%;
+    height: 80%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.SingleBtn {
+    width: 80%;
+    height: 2.5rem;
+    background-color: orange;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

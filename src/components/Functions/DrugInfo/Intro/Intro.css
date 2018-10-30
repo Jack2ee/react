@@ -1,0 +1,10 @@
+.IntroConceptDescription {
+    width: 80%;
+    text-align: center;
+}
+
+.IntroConceptSource {
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+}

@@ -1,0 +1,30 @@
+.Vision {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6b7a8f;
+}
+
+.VisionText {
+    color: white;
+}
+
+.VisionTextBox {
+    width: 85%;
+    height: 80%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+}
+
+
+
+.VisionTextBtn {
+    width: 70%;
+    height: 2.5rem;
+    background-color: orange;
+    border: none;
+    color: white;
+}
