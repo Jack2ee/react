@@ -7,7 +7,9 @@ import classes from './DefaultPage.css';
 
 const defaultPage = () => (
     <div className={classes.DefaultPage}>
-        <img src={DefaultImg} alt='DefaultImg' className={classes.DefaultImg}/>
+        <div className={classes.DefaultImg}>
+            <img src={DefaultImg} alt='DefaultImg'/>
+        </div>
         <DefaultPageExpl />
         <DefaultPageBtn />
     </div>

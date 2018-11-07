@@ -20,8 +20,11 @@
     background-color: #f7c331;
     color: white;
     border: transparent;
-
     cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .straightLineImg {

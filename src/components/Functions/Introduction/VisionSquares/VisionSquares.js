@@ -12,8 +12,8 @@ const visionSquares = () => (
             <div className={classes.VisionSquare1and2}>
                 <VisionSquare1
                     title="투약 정보 제공"
-                    description1="믿을 수 있는 정보에 쉽게 다가가세요."
-                    description2="국가가 보장하고, 전문가도 믿을 수 있는 정보를 제공합니다."
+                    description1="혹시 모를 위험에서 벗어나세요"
+                    description2="약과 약. 약과 건강기능식품. 함께 먹으면 위험할 수 있다는 사실 알고 계신가요? 저희가 알려 드립니다."
                     /> 
                 
                 <VisionSquare2
@@ -26,7 +26,7 @@ const visionSquares = () => (
                 <VisionSquare3
                     title="투약 건강 모니터링"
                     description1="처방전 사진으로 건강 모니터링 서비스가 가능합니다."
-                    description2="과거 질환 행적을 추적하여 미래 아픔에 대비하세요." />
+                    description2="과거 질환, 투약 이력 관리를 통해서 맞춤형 건강관리를 받으세요." />
                 <VisionSquare4
                     title="투약 세이렌"
                     description1="더 이상 약국에서 기다리지 마세요."

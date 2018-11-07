@@ -6,7 +6,7 @@ import classes from './SingleSearchBar.css';
 
 class SingleSearchBar extends Component {
 	getData = async () => {
-			const res = await axios.get("http://54.180.99.202/search/single");
+			const res = await axios.get("http://localhost:3500/search/single");
 			return await res
 	}
 	constructor(props) {
@@ -64,7 +64,7 @@ class SingleSearchBar extends Component {
 
 	testHandler = () => {
 			// document.getElementById('drugContent').style.display = 'block'
-			axios.get('http://54.180.99.202/singleSearch/' + this.state.value)
+			axios.get('http://localhost:3500/singleSearch/' + this.state.value)
 					.then(response =>
 							{const data = response.data
 							this.setState({
@@ -73,9 +73,9 @@ class SingleSearchBar extends Component {
 									ENTP_NAME: data[2],
 									STORAGE_METHOD: data[3],
 									VALID_TERM: data[4],
-									EE_DOC_DATA: data[5].map(i => this.state.EE_DOC_DATA.concat(i)),
-									UD_DOC_DATA: data[6].map(i => this.state.UD_DOC_DATA.concat(i)),
-									NB_DOC_DATA: data[7].map(i => this.state.NB_DOC_DATA.concat(i)),
+									EE_DOC_DATA: data[5],
+									UD_DOC_DATA: data[6],
+									NB_DOC_DATA: data[7]
 							})
 							console.log(data)
 							})
@@ -171,13 +171,11 @@ class SingleSearchBar extends Component {
 									<div><h3>분류</h3> {this.state.CLASS_NO}</div>
 
 									<div><h3>효능효과</h3>
-									<div>{this.state.EE_DOC_DATA.map((i, a)=>
-													<div key={a}>{i}</div>)}</div>
+									<div>{this.state.EE_DOC_DATA}</div>
 									</div>
 
 									<div><h3>복용방법</h3>
-									<div>{this.state.UD_DOC_DATA.map((i, b)=>
-													<div key={b}>{i}</div>)}</div>
+									<div>{this.state.UD_DOC_DATA}</div>
 									</div>
 									<button className={classes.moreBtn} onClick={this.toggleHandler}>자세히 알아보기</button>
 									<div style={{display: 'none'}} id='toggleContent'>
@@ -189,8 +187,7 @@ class SingleSearchBar extends Component {
 
 											<div><h3>유효기간</h3> {this.state.VALID_TERM}</div> 
 											<div><h3>주의사항</h3>
-											<div>{this.state.NB_DOC_DATA.map((i, c)=>
-															<div key={c}>{i}</div>)}</div>
+											<div>{this.state.NB_DOC_DATA}</div>
 											</div>
 
 													

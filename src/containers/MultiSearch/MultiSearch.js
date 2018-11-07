@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 import NavigationItems from '../../components/Navigation/NavigationItems';
 import MultiSearchPage from './MultiSearchBar/MultiSearchBar';
 

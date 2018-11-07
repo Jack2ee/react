@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
+import axios from '../../../axios-orders';
 
 import classes from './MultiSearchBar.css';
 
 class MultiSearchBar extends Component {
     state = {
-        inputs: ['query1']
+        inputs: [
+            {query1: { search_type: 'drug_name', search_term: '경동아스피린장용정'}},
+            {query2: { search_type: 'drug_name', search_term: '유한메토트렉세이트정'}}
+        ]
     };
 
     InputAppendHandler = () => {
         let newInput = `query${this.state.inputs.length+1}`;
-        this.setState({inputs: this.state.inputs.concat([newInput])});
+        this.setState({inputs: [...this.state.inputs, { [newInput]: { search_type: '', search_term: '' }}]});
     };
 
     InputRemoveHandler = () => {
@@ -20,16 +24,22 @@ class MultiSearchBar extends Component {
         };
     };
 
+    QuerySendHandler = () => {
+        const inputs = this.state.inputs
+        const search = {search: inputs}
+        axios.get('http://localhost:3500/multiSearch', { params: search })
+            .then(response=> console.log(response))
+        console.log(typeof search)
+    }
+
     render () {
         return (
             <div className={classes.InputBox}>
                 <div className={classes.InputArea}>
                     <h2>병용 금기 검색</h2>
                     <div>
-                        <form>
-                            {this.state.inputs.map(input => <input type="text" className={classes.Input} key={input} name={input}/>)}
-                            <button type="submit" className={classes.InputBtn}>검색</button>
-                        </form>                      
+                            {this.state.inputs.map((input, k) => <input key={k} type="text" className={classes.Input} name={input}/>)}
+                            <button type="submit" className={classes.InputBtn} onClick={this.QuerySendHandler}>검색</button>                    
                         <div className={classes.InputFunc}>
                             <button className={classes.InputFuncBtn} onClick={this.InputAppendHandler}>+</button>
                             <button className={classes.InputFuncBtn} onClick={this.InputRemoveHandler}>-</button>
