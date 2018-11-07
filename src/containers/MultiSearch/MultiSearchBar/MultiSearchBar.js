@@ -1,15 +1,59 @@
 import React, { Component } from 'react';
 import axios from '../../../axios-orders';
+import Autosuggest from 'react-autosuggest'
 
 import classes from './MultiSearchBar.css';
 
 class MultiSearchBar extends Component {
-    state = {
-        inputs: [
-            {query1: { search_type: 'drug_name', search_term: '경동아스피린장용정'}},
-            {query2: { search_type: 'drug_name', search_term: '유한메토트렉세이트정'}}
-        ]
-    };
+    getData = async () => {
+        const res = await axios.get("http://54.180.99.202/search/single");
+        return await res
+    }
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            inputs: [
+                {query1: { search_type: 'drug_name', search_term: '경동아스피린장용정'}},
+                {query2: { search_type: 'drug_name', search_term: '유한메토트렉세이트정'}}
+            ],
+            isRender: false
+        };
+    }
+
+
+    componentDidMount () {
+		if (!this.state.autocompleteData) {
+				this.getData().then(data=>
+						{this.setState({autocompleteData: data.data, isRender: true})
+						console.log(this.state.autocompleteData)})
+						.catch(err=>console.log(err))
+				}
+    }
+    
+    escapeRegexCharacters = (str) => {
+		return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+	}
+	
+	getSuggestions = (value) => {
+		const escapedValue = this.escapeRegexCharacters(value.trim());
+	
+		if (escapedValue === '') {
+			return [];
+		}
+
+		const regex = new RegExp('^' + escapedValue, 'i');
+
+		return this.state.autocompleteData.filter(data => regex.test(data.title));
+	}
+
+	getSuggestionValue = (suggestion) => {
+		return suggestion.title;
+	}
+
+	renderSuggestion = (suggestion) => {
+		return <span>{suggestion.title}</span>
+	}
 
     InputAppendHandler = () => {
         let newInput = `query${this.state.inputs.length+1}`;
@@ -27,7 +71,7 @@ class MultiSearchBar extends Component {
     QuerySendHandler = () => {
         const inputs = this.state.inputs
         const search = {search: inputs}
-        axios.get('http://localhost:3500/multiSearch', { params: search })
+        axios.get('http://54.180.99.202/multiSearch', { params: search })
             .then(response=> console.log(response))
         console.log(typeof search)
     }

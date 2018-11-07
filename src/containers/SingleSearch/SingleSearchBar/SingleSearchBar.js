@@ -6,7 +6,7 @@ import classes from './SingleSearchBar.css';
 
 class SingleSearchBar extends Component {
 	getData = async () => {
-			const res = await axios.get("http://localhost:3500/search/single");
+			const res = await axios.get("http://54.180.99.202/search/single");
 			return await res
 	}
 	constructor(props) {
@@ -64,7 +64,7 @@ class SingleSearchBar extends Component {
 
 	testHandler = () => {
 			// document.getElementById('drugContent').style.display = 'block'
-			axios.get('http://localhost:3500/singleSearch/' + this.state.value)
+			axios.get('http://54.180.99.202/singleSearch/' + this.state.value)
 					.then(response =>
 							{const data = response.data
 							this.setState({
@@ -136,6 +136,10 @@ class SingleSearchBar extends Component {
 		});
 	};
 
+	shouldRenderSuggestions = (value) => {
+		return value.trim().length > 1;
+	  }
+
 	
 	render () {
 	  const { value, suggestions } = this.state;
@@ -158,6 +162,7 @@ class SingleSearchBar extends Component {
 							getSuggestionValue={this.getSuggestionValue}
 							renderSuggestion={this.renderSuggestion}
 							inputProps={inputProps}
+							shouldRenderSuggestions={this.shouldRenderSuggestions}
 							onKeyPress={(e) => this.enterPressHandler(e)}
 						/>
 					<button 
