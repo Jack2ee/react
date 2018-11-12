@@ -156,4 +156,13 @@ padding: 10px 20px;
 background-color: #ddd;
 }
   
-  
+tbody {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+td {
+    border: 1px solid black;
+    width: 300px;
+    text-align: center;
+}
